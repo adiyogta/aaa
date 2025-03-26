@@ -72,7 +72,7 @@ export default function RootLayout({
         `}} />
       </head>
       <body className={`${inter.className} bg-[#FEFAE0]`}>
-        <Header placeholderImage={placeholderImage} />
+        <Header/>
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
           {children}
         </div>
