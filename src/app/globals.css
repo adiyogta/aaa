@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-dark: #283618;
+  --primary-medium: #606C38;
+  --primary-light: #FEFAE0;
+  --accent: #DDA15E;
+}
+
+body {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-dark);
+}
+
+/* Add these utility classes for easy color application */
+.bg-primary-dark {
+  background-color: var(--primary-dark);
+}
+
+.bg-primary-medium {
+  background-color: var(--primary-medium);
+}
+
+.bg-primary-light {
+  background-color: var(--primary-light);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.text-primary-dark {
+  color: var(--primary-dark);
+}
+
+.text-primary-medium {
+  color: var(--primary-medium);
+}
+
+.text-primary-light {
+  color: var(--primary-light);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.border-primary-dark {
+  border-color: var(--primary-dark);
+}
+
+.border-primary-medium {
+  border-color: var(--primary-medium);
+}
+
+.border-primary-light {
+  border-color: var(--primary-light);
+}
+
+.border-accent {
+  border-color: var(--accent);
+}
