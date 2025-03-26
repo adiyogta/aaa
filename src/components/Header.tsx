@@ -1,13 +1,17 @@
 "use client"
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CldImage } from 'next-cloudinary';
 
 const Header = () => {
   const [imageError, setImageError] = useState(false);
-  // Either use imageLoaded in your component or remove it
-  // const [imageLoaded, setImageLoaded] = useState(false);
+  const [cloudinaryAvailable, setCloudinaryAvailable] = useState(true);
+
+  useEffect(() => {
+    // Check if Cloudinary is configured
+    setCloudinaryAvailable(!!process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-[#FEFAE0] py-4 px-4 sm:px-6 border-b border-[#DDA15E]">
@@ -15,8 +19,10 @@ const Header = () => {
         <div className="logo">
           <Link href="/">
             <div className="flex items-center">
-              {imageError ? (
-                <div className="img-skeleton w-10 h-10 mr-2"></div>
+              {imageError || !cloudinaryAvailable ? (
+                <div className="w-10 h-10 mr-2 bg-[#DDA15E] rounded-full flex items-center justify-center">
+                  <span className="text-[#FEFAE0] text-xs font-bold">KB</span>
+                </div>
               ) : (
                 <CldImage
                   src="lg_kicau_burung_rpwxal"
@@ -25,7 +31,6 @@ const Header = () => {
                   height={40}
                   className="mr-2"
                   priority={true}
-                  // Update this to not use setImageLoaded
                   onError={() => setImageError(true)}
                 />
               )}
@@ -34,8 +39,10 @@ const Header = () => {
           </Link>
         </div>
         
-        {/* Rest of your component */}
+        {/* Rest of your header component */}
       </div>
+      
+      {/* Mobile menu */}
     </header>
   );
 };
