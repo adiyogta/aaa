@@ -11,6 +11,9 @@ const inter = Inter({ subsets: ["latin"] });
 const logoImageId = "lg_kicau_burung_rpwxal";
 const cloudinaryBaseUrl = "https://res.cloudinary.com/djnquduyl/image/upload/v1743013684";
 
+// Add a fallback placeholder image
+const placeholderImage = "https://placehold.co/600x400?text=Loading...";
+
 export const metadata: Metadata = {
   title: "Kicau Burung - Download Suara Burung Kicau Terbaik Untuk Masteran",
   description: "Koleksi lengkap suara kicau burung mp3 download gratis untuk masteran, lomba, terapi relaksasi, dan pancingan. Dapatkan suara burung gacor terpopuler di Indonesia.",
@@ -54,9 +57,22 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="canonical" href="https://kicauburung.my.id" />
+        {/* Add global styles for image placeholders */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          .img-skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+          }
+          @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+          }
+        `}} />
       </head>
       <body className={`${inter.className} bg-[#FEFAE0]`}>
-        <Header />
+        <Header placeholderImage={placeholderImage} />
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
           {children}
         </div>

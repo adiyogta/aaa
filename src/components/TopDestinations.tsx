@@ -9,42 +9,42 @@ const birdCategories = [
     id: 1, 
     name: 'Burung Murai Batu', 
     description: 'Suara khas Murai Batu untuk pemasteran dan terapi.', 
-    image: 'kicau-burung/murai-batu',
+    image: 'lg_kicau_burung_rpwxal',
     count: 24
   },
   { 
     id: 2, 
     name: 'Burung Kacer', 
     description: 'Kumpulan suara burung Kacer terbaik untuk melatih kicauan.', 
-    image: 'kicau-burung/kacer',
+    image: 'lg_kicau_burung_rpwxal',
     count: 18
   },
   { 
     id: 3, 
     name: 'Burung Cucak Ijo', 
     description: 'Download suara Cucak Ijo gacor untuk meningkatkan performa burung Anda.', 
-    image: 'kicau-burung/cucak-ijo',
+    image: 'lg_kicau_burung_rpwxal',
     count: 15
   },
   { 
     id: 4, 
     name: 'Burung Kenari', 
     description: 'Koleksi suara Kenari juara untuk referensi lomba dan pemasteran.', 
-    image: 'kicau-burung/kenari',
+    image: 'lg_kicau_burung_rpwxal',
     count: 20
   },
   { 
     id: 5, 
     name: 'Burung Jalak Suren', 
     description: 'Suara Jalak Suren gacor dengan kualitas audio premium.', 
-    image: 'kicau-burung/jalak-suren',
+    image: 'lg_kicau_burung_rpwxal',
     count: 12
   },
   { 
     id: 6, 
     name: 'Burung Lovebird', 
     description: 'Suara Lovebird ngekek panjang untuk pancingan dan terapi.', 
-    image: 'kicau-burung/lovebird',
+    image: 'lg_kicau_burung_rpwxal',
     count: 16
   },
 ];

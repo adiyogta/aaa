@@ -1,11 +1,17 @@
 "use client"
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CldImage } from 'next-cloudinary';
 
-const Header = () => {
+interface HeaderProps {
+  placeholderImage?: string;
+}
+
+const Header = ({ placeholderImage }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-[#FEFAE0] py-4 px-4 sm:px-6 border-b border-[#DDA15E]">
@@ -13,14 +19,20 @@ const Header = () => {
         <div className="logo">
           <Link href="/">
             <div className="flex items-center">
-              <CldImage
-                src="lg_kicau_burung_rpwxal"
-                alt="Kicau Burung Logo"
-                width={40}
-                height={40}
-                className="mr-2"
-                priority={true}
-              />
+              {imageError ? (
+                <div className="img-skeleton w-10 h-10 mr-2"></div>
+              ) : (
+                <CldImage
+                  src="lg_kicau_burung_rpwxal"
+                  alt="Kicau Burung Logo"
+                  width={40}
+                  height={40}
+                  className="mr-2"
+                  priority={true}
+                  onLoad={() => setImageLoaded(true)}
+                  onError={() => setImageError(true)}
+                />
+              )}
               <span className="text-xl font-bold text-[#283618]">Kicau Burung</span>
             </div>
           </Link>
