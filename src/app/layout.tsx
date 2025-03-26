@@ -12,7 +12,6 @@ const logoImageId = "lg_kicau_burung_rpwxal";
 const cloudinaryBaseUrl = "https://res.cloudinary.com/djnquduyl/image/upload/v1743013684";
 
 // Add a fallback placeholder image
-const placeholderImage = "https://placehold.co/600x400?text=Loading...";
 
 export const metadata: Metadata = {
   title: "Kicau Burung - Download Suara Burung Kicau Terbaik Untuk Masteran",

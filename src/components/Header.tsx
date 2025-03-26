@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { CldImage } from 'next-cloudinary';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
   // Either use imageLoaded in your component or remove it
   // const [imageLoaded, setImageLoaded] = useState(false);

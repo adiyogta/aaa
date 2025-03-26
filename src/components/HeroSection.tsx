@@ -1,9 +1,5 @@
 "use client"
 
-// Remove the Image import if it's not being used
-import { useState } from 'react';
-import CloudinaryImage from './CloudinaryImage';
-
 const HeroSection = () => {
   return (
     <section className="py-8 md:py-16 bg-[#FEFAE0]">
