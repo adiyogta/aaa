@@ -1,6 +1,6 @@
 "use client"
 
-import Image from 'next/image';
+// Remove the Image import if it's not being used
 import CloudinaryImage from './CloudinaryImage';
 
 const TrekkersHighlights = () => {

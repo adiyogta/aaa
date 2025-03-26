@@ -1,17 +1,13 @@
 "use client"
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { CldImage } from 'next-cloudinary';
 
-interface HeaderProps {
-  placeholderImage?: string;
-}
-
-const Header = ({ placeholderImage }: HeaderProps) => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-[#FEFAE0] py-4 px-4 sm:px-6 border-b border-[#DDA15E]">
@@ -81,38 +77,6 @@ const Header = ({ placeholderImage }: HeaderProps) => {
       </div>
       
       {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-[#FEFAE0] border-b border-[#DDA15E] shadow-lg">
-          <nav className="flex flex-col p-4">
-            <Link href="/suara-burung" className="py-2 text-[#283618] hover:text-[#606C38]">Suara Burung</Link>
-            <Link href="/artikel" className="py-2 text-[#283618] hover:text-[#606C38]">Artikel</Link>
-            <Link href="/panduan-perawatan" className="py-2 text-[#283618] hover:text-[#606C38]">Panduan Perawatan</Link>
-            <Link href="/komunitas" className="py-2 text-[#283618] hover:text-[#606C38]">Komunitas</Link>
-            <Link href="/toko" className="py-2 text-[#283618] hover:text-[#606C38]">Toko</Link>
-            <div className="relative mt-4">
-              <input 
-                type="text" 
-                placeholder="Cari suara burung..." 
-                className="w-full pl-8 pr-4 py-2 rounded-full border border-[#DDA15E] focus:outline-none focus:ring-2 focus:ring-[#606C38] bg-[#FEFAE0] text-[#283618]"
-              />
-              <svg 
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[#606C38]" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24" 
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" 
-                />
-              </svg>
-            </div>
-          </nav>
-        </div>
-      )}
     </header>
   );
 };
