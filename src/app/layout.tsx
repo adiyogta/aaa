@@ -56,6 +56,8 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="canonical" href="https://kicauburung.my.id" />
+        {/* Add Google Search Console verification meta tag - replace with your verification code */}
+        <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
         {/* Add global styles for image placeholders */}
         <style dangerouslySetInnerHTML={{ __html: `
           .img-skeleton {
